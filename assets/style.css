@@ -1,0 +1,120 @@
+/* Granice BiH — stil. Inspiracija: saobraćajna signalizacija (zelene table, rampa). */
+:root{
+  --asfalt:#15191D;
+  --tabla:#0E7A3C;        /* zelena saobraćajna tabla */
+  --tabla-tamna:#0A5C2D;
+  --papir:#F3F5F3;
+  --karta:#FFFFFF;
+  --tinta:#1B2127;
+  --siva:#5B6670;
+  --linija:#E2E6E3;
+  --zeleno:#1E8E3E;
+  --zuto:#E6B800;
+  --narandzasto:#E8710A;
+  --crveno:#D7263D;
+  --nepoznato:#9AA3AB;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papir);color:var(--tinta);
+  font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--tabla);text-decoration:none}
+a:hover,a:focus{text-decoration:underline}
+:focus-visible{outline:3px solid var(--zuto);outline-offset:2px}
+
+/* ——— Header kao zelena putna tabla ——— */
+header.glavni{background:var(--tabla);color:#fff;padding:14px 16px 12px}
+header.glavni .unutra{max-width:880px;margin:0 auto;display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-family:"Saira Condensed",system-ui,sans-serif;font-weight:700;font-size:30px;letter-spacing:.5px;color:#fff;text-transform:uppercase;line-height:1}
+.logo small{display:block;font-weight:600;font-size:13px;letter-spacing:1.5px;opacity:.85;margin-top:2px}
+.logo:hover{text-decoration:none}
+header.glavni nav{font-size:14px}
+header.glavni nav a{color:#fff;opacity:.92;margin-left:14px}
+
+/* Signature: granična rampa */
+.rampa{height:8px;background:repeating-linear-gradient(135deg,var(--crveno) 0 16px,#fff 16px 32px)}
+
+/* ——— Traka ažuriranja ——— */
+.azur{max-width:880px;margin:0 auto;padding:10px 16px;font-size:14px;color:var(--siva);
+  display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.azur strong{color:var(--tinta)}
+.upozorenje-staro{display:none;max-width:848px;margin:0 auto 8px;padding:10px 14px;border-radius:8px;
+  background:#FFF4D6;border:1px solid var(--zuto);font-size:14px}
+
+main{max-width:880px;margin:0 auto;padding:0 16px 48px}
+
+/* ——— Legenda ——— */
+.legenda{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--siva);margin:6px 0 18px}
+.legenda span{display:flex;align-items:center;gap:6px}
+
+/* ——— Sekcije po granici ——— */
+h2.granica{font-family:"Saira Condensed",system-ui,sans-serif;font-weight:700;font-size:24px;
+  text-transform:uppercase;letter-spacing:.8px;margin:26px 0 10px;display:flex;align-items:center;gap:8px}
+h2.granica .ees-tag{font:600 11px/1 system-ui;letter-spacing:.5px;background:#E8EEF9;color:#2B4A8B;
+  padding:4px 8px;border-radius:999px;text-transform:none}
+
+/* ——— Tabla stanja ——— */
+.tabla-lista{display:flex;flex-direction:column;gap:8px;list-style:none;margin:0;padding:0}
+.red{background:var(--karta);border:1px solid var(--linija);border-radius:10px;
+  display:flex;align-items:center;gap:12px;padding:12px 14px}
+.red:hover{border-color:var(--tabla)}
+.red .nazivi{flex:1;min-width:0}
+.red .nazivi a{font-family:"Saira Condensed",system-ui,sans-serif;font-weight:600;font-size:19px;color:var(--tinta);letter-spacing:.3px}
+.red .nazivi .pravac{display:block;font-size:13px;color:var(--siva);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.smjerovi{display:flex;gap:14px;flex-shrink:0}
+.smjer{text-align:center;min-width:52px}
+.smjer .etiketa{display:block;font-size:11px;letter-spacing:.5px;color:var(--siva);text-transform:uppercase}
+
+/* ——— Status indikator ——— */
+.dot{display:inline-block;width:22px;height:22px;border-radius:6px;vertical-align:middle;
+  border:1px solid rgba(0,0,0,.12)}
+.s-zeleno{background:var(--zeleno)}
+.s-zuto{background:var(--zuto)}
+.s-narandzasto{background:var(--narandzasto)}
+.s-crveno{background:var(--crveno)}
+.s-nepoznato{background:var(--nepoznato)}
+.dot-mali{width:14px;height:14px;border-radius:4px}
+
+/* ——— Stranica prelaza ——— */
+.status-blok{display:flex;gap:12px;margin:18px 0;flex-wrap:wrap}
+.status-kartica{flex:1;min-width:150px;background:var(--karta);border:1px solid var(--linija);
+  border-radius:12px;padding:14px;text-align:center}
+.status-kartica .etiketa{font-size:12px;letter-spacing:.8px;text-transform:uppercase;color:var(--siva)}
+.status-kartica .vrijednost{font-family:"Saira Condensed",system-ui,sans-serif;font-weight:700;
+  font-size:22px;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px}
+.status-kartica .vrijednost [data-prelaz]{display:inline-flex;align-items:center;gap:8px}
+.info-traka{background:var(--karta);border-left:4px solid var(--tabla);border-radius:0 8px 8px 0;
+  padding:10px 14px;font-size:15px;margin:8px 0 4px;display:none}
+.cinjenice{background:var(--karta);border:1px solid var(--linija);border-radius:12px;padding:4px 16px;margin:18px 0}
+.cinjenice dl{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;margin:14px 0}
+.cinjenice dt{color:var(--siva);font-size:14px}
+.cinjenice dd{margin:0;font-size:15px}
+.linkovi li{margin:6px 0}
+.napomena-zuta{background:#FFF8E1;border:1px solid #F0DD9A;border-radius:8px;padding:10px 14px;font-size:14px;margin:14px 0}
+
+h1{font-family:"Saira Condensed",system-ui,sans-serif;font-weight:700;font-size:30px;line-height:1.15;
+  letter-spacing:.4px;margin:20px 0 6px}
+.podnaslov{color:var(--siva);font-size:15px;margin:0 0 8px}
+h2{font-family:"Saira Condensed",system-ui,sans-serif;font-weight:600;font-size:22px;letter-spacing:.4px;margin:26px 0 8px}
+article p{max-width:64ch}
+
+/* ——— FAQ ——— */
+details{background:var(--karta);border:1px solid var(--linija);border-radius:10px;margin:8px 0;padding:0 14px}
+details summary{cursor:pointer;font-weight:600;padding:12px 0;font-size:15px}
+details p{margin:0 0 14px;font-size:15px}
+
+/* ——— Footer ——— */
+footer{background:var(--asfalt);color:#C6CCD2;margin-top:40px}
+footer .unutra{max-width:880px;margin:0 auto;padding:24px 16px;font-size:13px;line-height:1.6}
+footer a{color:#fff}
+.disclaimer{border-top:1px solid #2A3138;margin-top:14px;padding-top:14px;color:#9AA3AB}
+
+@media (max-width:520px){
+  .red{flex-wrap:wrap}
+  .smjerovi{width:100%;justify-content:flex-start;gap:24px;padding-top:4px;border-top:1px dashed var(--linija);margin-top:4px}
+  .cinjenice dl{grid-template-columns:1fr}
+  .cinjenice dt{margin-top:8px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .red{transition:border-color .15s ease}
+}
